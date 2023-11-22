@@ -2,13 +2,13 @@ version: '3'
 
 services:
     web-node-js:
-        image: atisak/nodejs:latest
+        image: nsarote/demo-nodejs:latest
         ports:
             - "3000:3000"
         environment:
             - MONGODB_ADDON_URI=mongodb://mongodb:27017/test
     mongodb:
-        image: mongo:latest
+        image: mongo:3.6
         ports: 
             - "27017:27017"
         

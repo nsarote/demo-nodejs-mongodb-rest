@@ -6,7 +6,10 @@ var Values = mongoose.model('values', schema);
 
 module.exports = {
     connectDB : function() {
-        mongoose.connect(process.env.MONGODB_ADDON_URI, { useNewUrlParser: true });
+        console.log(process.env.MONGODB_ADDON_URI);
+        var storeDB = process.env.MONGODB_ADDON_URI || "mongodb://127.0.0.1:27017/test";
+        console.log(storeDB);
+        mongoose.connect(storeDB, { useNewUrlParser: true });
     },
 
     updateGauge : function() {
